@@ -9,7 +9,7 @@ use Symfony\Contracts\HttpClient\Exception\ExceptionInterface;
 final readonly class RemoteProductApiService
 {
     private const API_URLS = [
-        'o' => 'http://autopro-reservation/api/borderau/%s',
+        'bordereau' => 'http://autopro-reservation/api/borderau/%s',
         'utilitaire' => 'https://utilitaire-reservation.fr/api/utilitaire/%s',
         'l' => 'http://127.0.0.1:8000/api/borderau/%s',
         'bmx' => 'https://velo-reservation.fr/api/bmx/%s',

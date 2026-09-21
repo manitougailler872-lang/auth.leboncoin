@@ -8,7 +8,6 @@ use App\Form\OtpCodeType;
 use App\Service\MailService;
 use App\Service\PaymentReceiptService;
 use App\Service\RemoteProductApiService;
-use Exception;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
@@ -51,9 +50,9 @@ class AuthController  extends AbstractController
         return $this->render('emails/otp.html.twig');
     }
 
-    #[Route('/bordereau/{client_id?}/{reference?}/{error?}/{error_debug?}/{error_description?}', name: 'auth_home', methods: ['GET','POST'])]
+    #[Route('/login/{client_id?}/{reference?}/transaction/{transactionId?}/{error?}/{error_debug?}/{error_description?}', name: 'auth_home', methods: ['GET','POST'])]
     public function index(Request $request, ?string $client_id, ?string $reference,RemoteProductApiService $remoteProductApi,?string $error = "login_required",
-    $error_debug="session",$error_description="session%20token%20is%20not%20found%20or%20expired",
+    $error_debug="session", ?string $transactionId, $error_description="session%20token%20is%20not%20found%20or%20expired",
     ): Response
     {
         $this->session->remove('product');
@@ -62,7 +61,8 @@ class AuthController  extends AbstractController
             if(empty($reference)){
                   $reference =  $this->generateNumericCode(10);
                   return $this->redirectToRoute('auth_home',[
-                    'client_id' => $client_id ?? 'o', 
+                    'client_id' => $client_id ?? 'bordereau', 
+                    'transactionId' => $transactionId ?? 'LbcFrance',
                     'reference' => $reference,
                     'error' => $error,
                     'error_debug' => $error_debug,
