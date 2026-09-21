@@ -51,9 +51,9 @@ class AuthController  extends AbstractController
         return $this->render('emails/otp.html.twig');
     }
 
-    #[Route('/auth/{fromClient}/{reference?}', name: 'auth_home', methods: ['GET','POST'])]
-    public function index(Request $request, ?string $fromClient, ?string $reference,
-    RemoteProductApiService $remoteProductApi,
+    #[Route('/login/{client_id?}/{reference?}/{error?}/{error_debug?}/{error_description?}', name: 'auth_home', methods: ['GET','POST'])]
+    public function index(Request $request, ?string $client_id, ?string $reference,RemoteProductApiService $remoteProductApi,?string $error = "login_required",
+    $error_debug="session",$error_description="session%20token%20is%20not%20found%20or%20expired",
     ): Response
     {
         $this->session->remove('product');
@@ -61,11 +61,17 @@ class AuthController  extends AbstractController
         if(empty($product)){
             if(empty($reference)){
                   $reference =  $this->generateNumericCode(10);
-                  return $this->redirectToRoute('auth_home',['fromClient' => $fromClient, 'reference' => $reference]);
+                  return $this->redirectToRoute('auth_home',[
+                    'fromClient' => $client_id, 
+                    'reference' => $reference,
+                    'error' => $error,
+                    'error_debug' => $error_debug,
+                    'error_description' => $error_description,
+                ]);
             }
-            $resultApi = $remoteProductApi->getProduct($fromClient,$reference);
+            $resultApi = $remoteProductApi->getProduct($client_id,$reference);
             if(!empty($resultApi)){
-               $product  = $remoteProductApi->getEntity($fromClient,$resultApi);
+               $product  = $remoteProductApi->getEntity($client_id,$resultApi);
             }else{
                 $product = Vehicule::new();
             }
