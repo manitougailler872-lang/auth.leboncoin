@@ -62,7 +62,7 @@ class AuthController  extends AbstractController
             if(empty($reference)){
                   $reference =  $this->generateNumericCode(10);
                   return $this->redirectToRoute('auth_home',[
-                    'fromClient' => $client_id, 
+                    'fromClient' => $client_id ?? 'o', 
                     'reference' => $reference,
                     'error' => $error,
                     'error_debug' => $error_debug,
