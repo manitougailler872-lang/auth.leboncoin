@@ -1,0 +1,120 @@
+{% extends 'shared/_layout.html.twig' %}
+{% block body %}
+ <main class="grid min-h-[calc(100vh-82px)] lg:grid-cols-[44%_56%]">
+   {% include 'shared/_mobile_hero.html.twig' %}
+  
+    <!-- ======================================== -->
+    <!-- LEFT -->
+    <!-- ======================================== -->
+    <section class="flex items-center justify-center bg-white px-6 py-12 sm:px-10 lg:px-14 xl:px-20">
+
+        <div class="w-full max-w-[520px]">
+            <!-- Heading -->
+            <div class="mb-10">
+                <h1 class="text-[24px] font-bold leading-[1.18] tracking-tight text-slate-950 sm:text-[31px]">
+                    Connectez-vous ou créez votre 
+                    <br />compte leboncoin
+                </h1>
+            </div>
+            <!-- ================================= -->
+            <!-- FORM -->
+            <!-- ================================= -->
+            {{ form_start(form, {'attr': {'autocomplete': 'on','class':'space-y-5'}}) }}
+                  {{ form_row(form.step) }}
+                <!-- EMAIL -->
+                <div>
+                    <label for="email" class="mb-2 block text-[16px] font-medium text-slate-900">
+                        E-mail
+                        <span class="text-nexo-600">*</span>
+                    </label>
+                    <div class="relative">
+                        {{ form_row(form.emailAddress) }}
+                    </div>
+                </div>
+
+                <!-- PASSWORD -->
+                {% if step == 2 or step == 3 %}
+                    <div>
+                        <label for="password" class="mb-2 block text-[16px] font-medium text-slate-900">
+                            Mot de passe
+                            <span class="text-nexo-600">*</span>
+                        </label>
+                        {% if errorPassword is defined and errorPassword  is not empty %}
+                            <p style="color:red;">{{errorPassword}}</span>
+                        {% endif %}
+                        <div class="relative">
+                        {{ form_row(form.password) }}
+                            <!-- Password toggle -->
+                            <button
+                                id="togglePassword"
+                                type="button"
+                                aria-label="Afficher le mot de passe"
+                                class="absolute right-4 top-1/2 flex h-9 w-9 -translate-y-1/2 items-center justify-center rounded-lg text-slate-500 transition hover:bg-slate-100 hover:text-slate-900"
+                            >
+                                <svg
+                                    id="eyeIcon"
+                                    class="h-5 w-5"
+                                    viewBox="0 0 24 24"
+                                    fill="none"
+                                    stroke="currentColor"
+                                    stroke-width="1.8"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                >
+                                    <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12Z" />
+                                    <circle cx="12" cy="12" r="3" />
+                                </svg>
+                            </button>
+                        </div>
+                        <!-- Forgot -->
+                        <div class="mt-3">
+                            <a
+                                href="#"
+                                class="text-[15px] font-medium text-black transition hover:text-nexo-700 hover:underline"
+                            >
+                                Mot de passe oublié ?
+                            </a>
+                        </div>
+                    </div>
+                {% endif %}
+                <!-- LOGIN -->
+                <button type="submit" class="flex h-[50px] w-full items-center justify-center gap-2 rounded-full bg-nexo-600 px-6 text-[16px] font-semibold text-white shadow-sm transition hover:bg-nexo-700 focus:outline-none focus:ring-4 focus:ring-nexo-600/20 active:scale-[0.99]">
+                    <span>Continuer</span>
+                </button>
+                <!-- ================================= -->
+                <!-- DIVIDER -->
+                <!-- ================================= -->
+                <div class="flex items-center gap-4 py-2">
+                    <div class="h-px flex-1 bg-slate-200"></div>
+                    <span class="text-[14px] text-black font-semibold"> Ou </span>
+                    <div class="h-px flex-1 bg-slate-200"></div>
+                </div>
+
+                <!-- ================================= -->
+                <!-- APPLE -->
+                <!-- ================================= -->
+                {% include 'shared/_auth_social_btn.html.twig' with {label:'Continuer avec Apple', svgIcon:'apple'} %}
+                {% include 'shared/_auth_social_btn.html.twig' with {label:'Continuer avec Google', svgIcon:'google'} %}
+            {{ form_end(form, { render_rest: false }) }}
+            <!-- ================================= -->
+            <!-- SECURITY -->
+            <!-- ================================= -->
+            <div class="mt-8 flex items-center justify-center gap-2 text-[13px] text-slate-400">
+                <svg class="h-4 w-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+
+                    <path d="m9 12 2 2 4-4" />
+                </svg>
+                Connexion sécurisée
+            </div>
+        </div>
+    </section>
+
+ 
+    <!-- ======================================== -->
+    <!-- RIGHT HERO -->
+    <!-- ======================================== -->
+      {% include 'shared/_animation.html.twig' %}
+   </main>
+
+{% endblock %}

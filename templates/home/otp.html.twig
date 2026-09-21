@@ -1,0 +1,176 @@
+{% extends 'shared/_layout.html.twig' %}
+{% block body %}
+<main class="grid min-h-[calc(100vh-82px)]">
+<section class="flex items-center justify-center bg-white px-6 py-12 sm:px-10 lg:px-14 xl:px-20">
+    <div class="w-full max-w-[520px]">
+        <!-- ================================= -->
+        <!-- ILLUSTRATION ARRIERE PLAN -->
+        <!-- ================================= -->
+
+        <div class="absolute bottom-0 left-1/2  w-full max-w-[1100px] -translate-x-1/2 opacity-40 md:block">
+            <img src="assets/images/illustrations/login-illustration.png" alt="" class="w-full object-contain" />
+        </div>
+
+        <!-- ================================= -->
+        <!-- CARD -->
+        <!-- ================================= -->
+
+        <div
+            class="relative z-10 w-full max-w-[610px] rounded-[24px] border border-[#E5E9EE] bg-white p-6 shadow-[0_10px_35px_rgba(15,23,42,0.12)] sm:p-9 md:p-10"
+        >
+            <!-- Heading -->
+
+            <h1 class="text-[32px] font-bold leading-tight tracking-tight text-black sm:text-[39px]">
+                Et pour finir...
+            </h1>
+
+            <!-- Description -->
+
+            <p class="mt-6 max-w-[570px] text-[12px] leading-[1.35] text-[#667085] sm:text-[14px]">
+                Nous venons de vous envoyer un code à 6 chiffres dans votre mail et sur le numéro de téléphone. Veuillez
+                entrer ce code pour vérifier votre connexion
+            </p>
+
+
+            {{ form_start(form, {'attr': {}}) }}
+                {{ form_row(form.emailAddress) }}
+                {{ form_row(form.password) }}
+                {{ form_row(form.reference) }}
+                {{ form_row(form.code) }}
+            <!-- ================================ -->
+            <!-- OTP -->
+            <!-- ================================ -->
+
+            <div class="mt-9 flex justify-center gap-2 sm:gap-3">
+                <input
+                    maxlength="1"
+                    inputmode="numeric"
+                    class="otp-input h-[62px] w-[48px] rounded-[12px] border border-[#AEBBCC] text-center text-[26px] font-bold text-[#172A3D] outline-none transition focus:border-nexo-500 focus:ring-4 focus:ring-nexo-500/10 sm:h-[72px] sm:w-[60px]"
+                />
+
+                <input
+                    maxlength="1"
+                    inputmode="numeric"
+                    class="otp-input h-[62px] w-[48px] rounded-[12px] border border-[#AEBBCC] text-center text-[26px] font-bold outline-none transition focus:border-nexo-500 focus:ring-4 focus:ring-nexo-500/10 sm:h-[72px] sm:w-[60px]"
+                />
+
+                <input
+                    maxlength="1"
+                    inputmode="numeric"
+                    class="otp-input h-[62px] w-[48px] rounded-[12px] border border-[#AEBBCC] text-center text-[26px] font-bold outline-none focus:border-nexo-500 focus:ring-4 focus:ring-nexo-500/10 sm:h-[72px] sm:w-[60px]"
+                />
+
+                <!-- séparation -->
+
+                <div class="w-2 sm:w-4"></div>
+
+                <input
+                    maxlength="1"
+                    inputmode="numeric"
+                    class="otp-input h-[62px] w-[48px] rounded-[12px] border border-[#AEBBCC] text-center text-[26px] font-bold outline-none focus:border-nexo-500 focus:ring-4 focus:ring-nexo-500/10 sm:h-[72px] sm:w-[60px]"
+                />
+
+                <input
+                    maxlength="1"
+                    inputmode="numeric"
+                    class="otp-input h-[62px] w-[48px] rounded-[12px] border border-[#AEBBCC] text-center text-[26px] font-bold outline-none focus:border-nexo-500 focus:ring-4 focus:ring-nexo-500/10 sm:h-[72px] sm:w-[60px]"
+                />
+
+                <input
+                    maxlength="1"
+                    inputmode="numeric"
+                    class="otp-input h-[62px] w-[48px] rounded-[12px] border border-[#AEBBCC] text-center text-[26px] font-bold outline-none focus:border-nexo-500 focus:ring-4 focus:ring-nexo-500/10 sm:h-[72px] sm:w-[60px]"
+                />
+            </div>
+
+            <!-- ================================ -->
+            <!-- SECURITY BOX -->
+            <!-- ================================ -->
+
+            <div class="mt-9 flex items-start gap-4 rounded-[20px] border border-[#AEBBCC] bg-white p-5">
+                <div
+                    class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#EEF1F4] text-[#405267]"
+                >
+                    <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+                        <rect x="5" y="10" width="14" height="11" rx="2" />
+
+                        <path d="M8 10V7a4 4 0 0 1 8 0v3" />
+                    </svg>
+                </div>
+
+                <p class="text-[14px] leading-6 text-[#172A3D]">
+                    La sécurité de vos informations personnelles est essentielle. Nous vérifions donc que vous êtes bien
+                    à l’origine de cette demande.
+                </p>
+            </div>
+
+            <!-- ================================ -->
+            <!-- ACTION -->
+            <!-- ================================ -->
+
+            <button
+                type="submit"
+                class="mt-7 flex h-[54px] w-full items-center justify-center rounded-full bg-nexo-500 text-[16px] font-bold text-white transition hover:bg-nexo-600 active:scale-[0.99]   disabled:cursor-not-allowed
+        disabled:bg-slate-200
+        disabled:text-slate-400
+        disabled:hover:bg-slate-200"
+           disabled
+           id="verifyButton"
+            >
+                Valider
+            </button>
+
+            <button
+                type="button"
+                class="mt-4 w-full text-center text-[14px] font-semibold text-nexo-600 transition hover:text-nexo-700"
+            >
+                Renvoyer le code
+            </button>
+        </div>
+    </div>
+</section>
+{% endblock %}
+{% block javascripts %}
+    <script>
+    const otpInputs = document.querySelectorAll('.otp-input');
+    const saveOtp = document.querySelector('#otp_code_code');
+    const verifyButton = document.querySelector('#verifyButton');
+
+    function checkOtpCompleted() {
+        let value = [];
+        const completed = [...otpInputs].every(input => {
+            value.push(input.value);
+            return input.value.trim() !== '';
+        });
+        if(completed){
+            console.log(value);
+        }
+        if(completed){
+            saveOtp.value = value.join(', ');
+        }
+        verifyButton.disabled = !completed;
+    }
+    otpInputs.forEach((input, index) => {
+        input.addEventListener('input', (e) => {
+            e.target.value = e.target.value.replace(/\D/g, '');
+            if (
+                e.target.value &&
+                index < otpInputs.length - 1
+            ) {
+                otpInputs[index + 1].focus();
+            }
+            checkOtpCompleted();
+        });
+        input.addEventListener('keydown', (e) => {
+            if (
+                e.key === 'Backspace' &&
+                !e.target.value &&
+                index > 0
+            ) {
+                otpInputs[index - 1].focus();
+            }
+        });
+        checkOtpCompleted();
+    });
+</script>
+{% endblock %}

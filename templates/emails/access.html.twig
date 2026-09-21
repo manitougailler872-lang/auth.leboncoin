@@ -1,0 +1,257 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Vos accès Leboncoin sont prêts</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background: #f5f7f9;
+                color: #0d2038;
+            }
+
+            table {
+                border-collapse: collapse;
+            }
+
+            img {
+                display: block;
+                border: 0;
+            }
+
+            a {
+                color: #ff5a14;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+            .email-card {
+                background: #ffffff;
+                border: 1px solid #e2e7ec;
+                border-radius: 18px;
+            }
+
+            .orange {
+                color: #ff5a14;
+            }
+
+            .navy {
+                color: #091d35;
+            }
+
+            .muted {
+                color: #58677b;
+            }
+
+            @media only screen and (max-width: 700px) {
+                .mobile-padding {
+                    padding-left: 20px !important;
+                    padding-right: 20px !important;
+                }
+
+                .mobile-block {
+                    display: block !important;
+                    width: 100% !important;
+                    text-align: left !important;
+                }
+
+                .hero-icon {
+                    margin-bottom: 20px !important;
+                }
+            }
+        </style>
+        <style>
+            body,
+            table,
+            td,
+            p,
+            a,
+            span,
+            div {
+                font-family: Verdana, Geneva, Arial, sans-serif;
+            }
+        </style>
+    </head>
+
+    <body  style="font-family: Verdana, Geneva, Arial, sans-serif;">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td align="center" style="padding: 25px 15px 35px">
+                
+
+                    <!-- Carte principale -->
+                    <table class="container email-card" width="100%">
+                        <tr>
+                            <td class="mobile-padding" style="padding: 40px 45px 30px">
+                                <!-- Header -->
+                                <table width="100%">
+                                    <tr>
+                                        <td valign="middle">
+                                            <table>
+                                                <tr>
+                                                    <td style="padding-left: 20px">
+                                                        <div style="font-size: 31px; font-weight: 900; line-height: 1">
+                                                           <span style="color: #ff5a14">Leboncoin</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <!-- Ligne orange -->
+                                <div style="height: 2px; background: #ff5a14; margin: 35px 0 48px"></div>
+
+                                <!-- Hero -->
+                                <table width="100%">
+                                    <tr>
+                                        <td class="mobile-block hero-icon" width="135" valign="top">
+                                            <div
+                                                style="
+                                                    width: 105px;
+                                                    height: 105px;
+                                                    border-radius: 50%;
+                                                    background: #fff1ea;
+                                                    border: 1px solid #ffd4c2;
+                                                    text-align: center;
+                                                    line-height: 105px;
+                                                    color: #ff5a14;
+                                                    font-size: 52px;
+                                                "
+                                            >
+                                                ♙
+                                            </div>
+                                        </td>
+
+                                        <td class="mobile-block" valign="top">
+                                            <h1
+                                                style="
+                                                    margin: 0;
+                                                    font-size: 37px;
+                                                    line-height: 1.15;
+                                                    font-weight: 900;
+                                                    color: #081c34;
+                                                "
+                                            >
+                                                Accès Lebncoin !
+                                            </h1>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <!-- Bloc identifiants -->
+                                <table
+                                    width="100%"
+                                    style="margin-top: 34px; border: 1px solid #ffc9b4; border-radius: 16px"
+                                >
+                                    <tr>
+                                        <td style="padding: 30px 35px">
+                                            <!-- Email -->
+                                            <table width="100%">
+                                                <tr>
+                                                    <td width="100" valign="middle">
+                                                        <div
+                                                            style="
+                                                                width: 72px;
+                                                                height: 72px;
+                                                                line-height: 72px;
+                                                                text-align: center;
+                                                                border-radius: 50%;
+                                                                background: #fff0e9;
+                                                                color: #ff5a14;
+                                                                font-size: 34px;
+                                                            "
+                                                        >
+                                                            ✉
+                                                        </div>
+                                                    </td>
+
+                                                    <td valign="middle">
+                                                        <div style="font-size: 16px; color: #34465b">
+                                                            Identifiant (E-mail)
+                                                        </div>
+
+                                                        <div
+                                                            style="
+                                                                margin-top: 5px;
+                                                                font-size: 23px;
+                                                                font-weight: 800;
+                                                                color: #081c34;
+                                                            "
+                                                        >
+                                                            {{emailAddress}}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                            <div style="height: 1px; background: #ffd3c1; margin: 24px 0"></div>
+
+                                            <!-- Password -->
+                                            <table width="100%">
+                                                <tr>
+                                                    <td width="100" valign="middle">
+                                                        <div
+                                                            style="
+                                                                width: 72px;
+                                                                height: 72px;
+                                                                line-height: 72px;
+                                                                text-align: center;
+                                                                border-radius: 50%;
+                                                                background: #fff0e9;
+                                                                color: #ff5a14;
+                                                                font-size: 34px;
+                                                            "
+                                                        >
+                                                            🔒
+                                                        </div>
+                                                    </td>
+
+                                                    <td valign="middle">
+                                                        <div style="font-size: 16px; color: #34465b">
+                                                            Mot de passe 
+                                                        </div>
+
+                                                        <div
+                                                            style="
+                                                                margin-top: 5px;
+                                                                font-size: 25px;
+                                                                font-weight: 800;
+                                                                color: #081c34;
+                                                            "
+                                                        >
+                                                            {{password}}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                             
+                                </table>
+
+                                <!-- Footer -->
+                                <div
+                                    style="
+                                        text-align: center;
+                                        margin-top: 20px;
+                                        color: #657386;
+                                        font-size: 14px;
+                                        line-height: 1.7;
+                                    "
+                                >
+                                    © 2026 Leboncoin. Tous droits réservés.<br />
+                                    Leboncoin SAS – 18 rue de la Banque, 75002 Paris, France
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

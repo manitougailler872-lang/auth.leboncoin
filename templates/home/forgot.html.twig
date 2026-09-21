@@ -1,0 +1,267 @@
+
+{% block body %}
+    <section class="min-h-screen bg-white">
+    <div
+        class="
+            mx-auto
+            grid
+            min-h-screen
+            max-w-[1050px]
+            grid-cols-1
+            items-center
+            px-6
+            py-12
+            md:grid-cols-2
+            md:gap-16
+            lg:px-10
+        "
+    >
+        <div class="mx-auto w-full max-w-[430px]">
+            <h1
+                class="
+                    text-[30px]
+                    font-bold
+                    leading-tight
+                    tracking-[-0.02em]
+
+                    sm:text-[34px]
+                "
+            >
+                Mot de passe oublié
+            </h1>
+
+            <p class="mt-3 text-[17px] text-[#405267]">
+                Entrez l’adresse e-mail associée à votre compte
+            </p>
+
+            <form class="mt-12">
+                <div>
+                    <label
+                        for="email"
+                        class="mb-3 block text-[17px] font-semibold"
+                    >
+                        E-mail
+                        <span class="text-[#64748B]">*</span>
+                    </label>
+
+                    <input
+                        id="email"
+                        type="email"
+                        autocomplete="email"
+                        placeholder="exemple@email.com"
+
+                        class="
+                            h-[56px]
+                            w-full
+                            rounded-full
+                            border
+                            border-[#AEBBCC]
+                            bg-white
+                            px-6
+                            text-[16px]
+                            outline-none
+                            transition
+
+                            placeholder:text-[#98A5B3]
+
+                            hover:border-[#7F8D9C]
+
+                            focus:border-nexo-500
+                            focus:ring-4
+                            focus:ring-nexo-500/10
+                        "
+                    >
+                </div>
+                <button
+                    type="submit"
+                    class="
+                        mt-8
+                        flex
+                        h-[56px]
+                        w-full
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-nexo-500
+                        px-8
+                        text-[17px]
+                        font-bold
+                        text-white
+                        transition
+
+                        hover:bg-nexo-600
+                        active:scale-[0.99]
+
+                        sm:w-auto
+                        sm:min-w-[150px]
+                    "
+                >
+                    Continuer
+                </button>
+
+            </form>
+
+
+            <a
+                href="#"
+                class="
+                    mt-7
+                    inline-flex
+                    items-center
+                    gap-2
+                    text-[15px]
+                    font-semibold
+                    text-[#405267]
+                    transition
+                    hover:text-nexo-500
+                "
+            >
+
+                <svg
+                    class="h-4 w-4"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                >
+                    <path d="m15 18-6-6 6-6"/>
+                </svg>
+
+                Retour à la connexion
+
+            </a>
+
+        </div>
+
+        <div
+            class="
+                order-first
+                mb-10
+                flex
+                items-center
+                justify-center
+
+                md:order-none
+                md:mb-0
+            "
+        >
+
+            <div
+                class="
+                    relative
+                    flex
+                    aspect-square
+                    w-full
+                    max-w-[340px]
+                    items-center
+                    justify-center
+                    rounded-[40%]
+                    bg-nexo-50
+
+                    md:max-w-[420px]
+                "
+            >
+
+        
+
+                <div class="relative flex items-center">
+
+                    <div
+                        class="
+                            relative
+                            h-[125px]
+                            w-[105px]
+                            rounded-[18px]
+                            bg-nexo-400
+
+                            sm:h-[145px]
+                            sm:w-[120px]
+                        "
+                    >
+
+                        <div
+                            class="
+                                absolute
+                                -top-[80px]
+                                left-1/2
+                                h-[100px]
+                                w-[72px]
+                                -translate-x-1/2
+                                rounded-t-full
+                                border-[15px]
+                                border-nexo-400
+                                border-b-0
+                            "
+                        ></div>
+
+
+
+                        <div
+                            class="
+                                absolute
+                                left-1/2
+                                top-1/2
+                                h-10
+                                w-5
+                                -translate-x-1/2
+                                -translate-y-1/2
+                                rounded-full
+                                bg-nexo-800
+                            "
+                        ></div>
+
+                    </div>
+
+                    <div
+                        class="
+                            absolute
+                            -left-[70px]
+                            -top-[45px]
+                            h-[26px]
+                            w-[105px]
+                            -rotate-[78deg]
+                            rounded-full
+                            bg-nexo-500
+                        "
+                    >
+
+                        <div
+                            class="
+                                absolute
+                                -left-[24px]
+                                -top-[17px]
+                                h-[60px]
+                                w-[60px]
+                                rounded-full
+                                border-[13px]
+                                border-nexo-500
+                            "
+                        ></div>
+
+                    </div>
+
+                </div>
+
+                <div
+                    class="
+                        absolute
+                        right-[13%]
+                        top-[8%]
+                        flex
+                        h-[90px]
+                        w-[90px]
+                        items-center
+                        justify-center
+                        rounded-full
+                        bg-[#D8DEE6]
+                        text-[55px]
+                        font-bold
+                        text-white"
+                >
+                    ?
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

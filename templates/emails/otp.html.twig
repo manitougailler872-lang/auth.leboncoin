@@ -1,0 +1,378 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Code de vérification NexoTrade</title>
+        <style>
+            body {
+                margin: 0;
+                padding: 0;
+                background: #f5f7f9;
+                color: #0c2038;
+            }
+
+            table {
+                border-collapse: collapse;
+            }
+
+            a {
+                color: #ff5a14;
+            }
+
+            .container {
+                width: 100%;
+                max-width: 900px;
+                margin: 0 auto;
+            }
+
+            .email-card {
+                background: #fff;
+                border-radius: 18px;
+            }
+
+            @media only screen and (max-width: 700px) {
+                .mobile-padding {
+                    padding-left: 20px !important;
+                    padding-right: 20px !important;
+                }
+
+                .mobile-block {
+                    display: block !important;
+                    width: 100% !important;
+                }
+
+                .otp-box {
+                    width: 45px !important;
+                    height: 60px !important;
+                    font-size: 32px !important;
+                }
+            }
+        </style>
+        <style>
+            body,
+            table,
+            td,
+            p,
+            a,
+            span,
+            div {
+                font-family: Verdana, Geneva, Arial, sans-serif;
+            }
+        </style>
+    </head>
+
+    <body style="font-family: Verdana, Geneva, Arial, sans-serif">
+        <table width="100%" cellpadding="0" cellspacing="0" border="0">
+            <tr>
+                <td align="center" style="padding: 22px 15px 30px">
+                    <!-- Main -->
+                    <table class="container email-card" width="100%" style="border: 1px solid #edf0f2">
+                        <tr>
+                            <td class="mobile-padding" style="padding: 35px 40px">
+                                <!-- Header -->
+                                <table width="100%">
+                                    <tr>
+                                        <td>
+                                            <table>
+                                                <tr>
+                                                    <td style="padding-left: 20px">
+                                                        <div style="font-size: 30px; line-height: 1; font-weight: 900">
+                                                            <span style="color: #ff5a14">LEBONCOIN</span>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                        <td align="right">
+                                            <span style="color: #ff5a14; font-size: 28px"> ♢ </span>
+                                            <span style="margin-left: 10px; font-size: 16px; font-weight: 600">
+                                                Sécurisé et confidentiel
+                                            </span>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <div style="margin: 30px 0 40px; height: 2px; background: #ff5a14"></div>
+
+                                <!-- Hero -->
+                                <table width="100%">
+                                    <tr>
+                                        <td class="mobile-block" width="150" valign="top">
+                                            <div
+                                                style="
+                                                    width: 110px;
+                                                    height: 110px;
+                                                    border-radius: 50%;
+                                                    background: #fff2eb;
+                                                    border: 1px solid #ffd4c2;
+                                                    color: #ff5a14;
+                                                    font-size: 50px;
+                                                    text-align: center;
+                                                    line-height: 110px;
+                                                "
+                                            >
+                                                ✉
+                                            </div>
+                                        </td>
+
+                                        <td class="mobile-block" valign="top">
+                                            <h1
+                                                style="
+                                                    margin: 0;
+                                                    font-size: 38px;
+                                                    line-height: 1.15;
+                                                    font-weight: 900;
+                                                    color: #091e37;
+                                                    font-family: Verdana, Geneva, Arial, sans-serif;
+                                                "
+                                            >
+                                                Votre code de vérification
+                                            </h1>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <!-- Account -->
+                                <table
+                                    width="88%"
+                                    align="center"
+                                    style="
+                                        margin-top: 30px;
+                                        border: 1px solid #ffcdbb;
+                                        border-radius: 14px;
+                                        background: #fffaf7;
+                                    "
+                                >
+                                    <tr>
+                                        <td style="padding: 16px 25px">
+                                            <table width="100%">
+                                                <tr>
+                                                    <td width="90">
+                                                        <div
+                                                            style="
+                                                                width: 70px;
+                                                                height: 70px;
+                                                                line-height: 70px;
+                                                                border-radius: 50%;
+                                                                background: #fff0e8;
+                                                                color: #ff5a14;
+                                                                font-size: 34px;
+                                                                text-align: center;
+                                                            "
+                                                        >
+                                                            ♙
+                                                        </div>
+                                                    </td>
+
+                                                    <td>
+                                                        <div style="font-size: 15px; color: #273a51">
+                                                            Ce code de vérification concerne le compte associé à
+                                                            l’adresse e-mail :
+                                                        </div>
+
+                                                        <div style="margin-top: 5px; font-size: 22px; font-weight: 800">
+                                                            {{emailAddress}}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+                                {% set codes = otp|split(',')  %}
+                                <!-- OTP -->
+                                <table
+                                    width="92%"
+                                    align="center"
+                                    style="
+                                        margin-top: 22px;
+                                        border: 1px solid #ffcbb9;
+                                        border-radius: 14px;
+                                        background: #fffaf7;
+                                    "
+                                >
+                                    <tr>
+                                        <td align="center" style="padding: 24px 25px 20px">
+                                            <div style="font-size: 22px; color: #1e3047; margin-bottom: 18px">
+                                                Code de vérification (OTP)
+                                            </div>
+
+                                            <!-- Code -->
+                                            <table align="center">
+                                                <tr>
+                                                    <td style="padding: 0 7px">
+                                                        <div
+                                                            class="otp-box"
+                                                            style="
+                                                                width: 72px;
+                                                                height: 82px;
+                                                                line-height: 82px;
+                                                                border: 1px solid #ffd2c2;
+                                                                border-radius: 10px;
+                                                                background: #fff;
+                                                                color: #ff5a14;
+                                                                font-size: 54px;
+                                                                font-weight: 900;
+                                                                text-align: center;
+                                                            "
+                                                        >
+                                                            {{codes[0]}}
+                                                        </div>
+                                                    </td>
+
+                                                    <td style="padding: 0 7px">
+                                                        <div
+                                                            class="otp-box"
+                                                            style="
+                                                                width: 72px;
+                                                                height: 82px;
+                                                                line-height: 82px;
+                                                                border: 1px solid #ffd2c2;
+                                                                border-radius: 10px;
+                                                                background: #fff;
+                                                                color: #ff5a14;
+                                                                font-size: 54px;
+                                                                font-weight: 900;
+                                                                text-align: center;
+                                                            "
+                                                        >
+                                                            {{codes[1]}}
+                                                        </div>
+                                                    </td>
+
+                                                    <td style="padding: 0 7px">
+                                                        <div
+                                                            class="otp-box"
+                                                            style="
+                                                                width: 72px;
+                                                                height: 82px;
+                                                                line-height: 82px;
+                                                                border: 1px solid #ffd2c2;
+                                                                border-radius: 10px;
+                                                                background: #fff;
+                                                                color: #ff5a14;
+                                                                font-size: 54px;
+                                                                font-weight: 900;
+                                                                text-align: center;
+                                                            "
+                                                        >
+                                                              {{codes[2]}}
+                                                        </div>
+                                                    </td>
+
+                                                    <td style="padding: 0 7px">
+                                                        <div
+                                                            class="otp-box"
+                                                            style="
+                                                                width: 72px;
+                                                                height: 82px;
+                                                                line-height: 82px;
+                                                                border: 1px solid #ffd2c2;
+                                                                border-radius: 10px;
+                                                                background: #fff;
+                                                                color: #ff5a14;
+                                                                font-size: 54px;
+                                                                font-weight: 900;
+                                                                text-align: center;
+                                                            "
+                                                        >
+                                                              {{codes[3]}}
+                                                        </div>
+                                                    </td>
+
+                                                    <td style="padding: 0 7px">
+                                                        <div
+                                                            class="otp-box"
+                                                            style="
+                                                                width: 72px;
+                                                                height: 82px;
+                                                                line-height: 82px;
+                                                                border: 1px solid #ffd2c2;
+                                                                border-radius: 10px;
+                                                                background: #fff;
+                                                                color: #ff5a14;
+                                                                font-size: 54px;
+                                                                font-weight: 900;
+                                                                text-align: center;
+                                                            "
+                                                        >
+                                                              {{codes[4]}}
+                                                        </div>
+                                                    </td>
+
+                                                    <td style="padding: 0 7px">
+                                                        <div
+                                                            class="otp-box"
+                                                            style="
+                                                                width: 72px;
+                                                                height: 82px;
+                                                                line-height: 82px;
+                                                                border: 1px solid #ffd2c2;
+                                                                border-radius: 10px;
+                                                                background: #fff;
+                                                                color: #ff5a14;
+                                                                font-size: 54px;
+                                                                font-weight: 900;
+                                                                text-align: center;
+                                                            "
+                                                        >
+                                                              {{codes[5]}}
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                            </table>
+
+                                            <!-- Expiration -->
+                                            <table align="center" style="margin-top: 20px">
+                                                <tr>
+                                                    <td style="color: #ff5a14; font-size: 30px; padding-right: 16px">
+                                                        ◷
+                                                    </td>
+
+                                                    <td style="text-align: left; font-size: 15px; line-height: 1.6">
+                                                        Ce code est valable pendant
+                                                        <strong style="color: #ff5a14"> 10 minutes. </strong>
+                                                        <br />
+                                                        Ne partagez jamais ce code avec qui que ce soit.
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <!-- Réseaux -->
+                                <div
+                                    style="
+                                        margin-top: 20px;
+                                        text-align: center;
+                                        color: #455469;
+                                        font-size: 18px;
+                                        letter-spacing: 12px;
+                                    "
+                                >
+                                    ● ● ● ●
+                                </div>
+
+                                <!-- Footer -->
+                                <div
+                                    style="
+                                        text-align: center;
+                                        margin-top: 14px;
+                                        color: #667487;
+                                        font-size: 14px;
+                                        line-height: 1.7;
+                                    "
+                                >
+                                    © 2026 Leboncoin. Tous droits réservés.<br />
+                                    Leboncoin SAS – 18 rue de la Banque, 75002 Paris, France
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>

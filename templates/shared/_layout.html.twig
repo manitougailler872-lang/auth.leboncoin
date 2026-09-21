@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Connexion | Leboncoin</title>
+        <!-- Google Font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;500;600;700;800;900&display=swap"
+            rel="stylesheet"
+        >
+        <!-- Tailwind CSS -->
+        <script src="https://cdn.tailwindcss.com"></script>
+       <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    nexo: {
+                        50:  "#FFF7F2",
+                        100: "#FFECDD",
+                        200: "#FFD5BA",
+                        300: "#FFB087",
+                        400: "#FF884A",
+                        500: "#FF6E14", // couleur principale
+                        600: "#F25700",
+                        700: "#C94000",
+                        800: "#A03408",
+                        900: "#812D0B",
+                        950: "#461404",
+                    },
+                },
+
+                fontFamily: {
+                    nunito: ["Nunito", "sans-serif"],
+                },
+            },
+        },
+    };
+</script>
+        <style>
+            body {
+                font-family: "Nunito", sans-serif;
+            }
+            .scroll-down {
+                    animation: scrollDown 22s linear infinite;
+                    will-change: transform;
+                }
+                @keyframes scrollDown {
+                    from {
+                        transform: translateY(-50%);
+                    }
+                    to {
+                        transform: translateY(0);
+                    }
+                }
+            .hero-grid {
+                background-image: linear-gradient(rgba(255, 79, 0, 0.045) 1px, transparent 1px),linear-gradient(90deg, rgba(255, 79, 0, 0.045) 1px, transparent 1px);
+                background-size: 100px 100px;
+            }
+        </style>
+    </head>
+
+    <body class="bg-white text-slate-900">
+        <div class="min-h-screen">
+            <!-- ============================================ -->
+            <!-- HEADER -->
+            <!-- ============================================ -->
+            {% include 'shared/_header.html.twig' %}
+         
+            <!-- ============================================ -->
+            <!-- MAIN -->
+            <!-- ============================================ -->
+              {% block body %}{% endblock %}
+        </div>
+        <!-- ============================================ -->
+        <!-- JS -->
+        <!-- ============================================ -->
+        {% block javascripts %}
+            <script>
+                const passwordInput = document.getElementById("password");
+            
+                const togglePassword = document.getElementById("togglePassword");
+                togglePassword.addEventListener("click", function () {
+                    const isPassword = passwordInput.type === "password";
+                    passwordInput.type = isPassword ? "text" : "password";
+                    togglePassword.setAttribute(
+                        "aria-label",
+                        isPassword ? "Masquer le mot de passe" : "Afficher le mot de passe"
+                    );
+                });
+        </script>
+        {% endblock %}
+    </body>
+</html>

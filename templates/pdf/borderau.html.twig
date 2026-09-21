@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="fr">
+    <head>
+        <meta charset="UTF-8" />
+
+        <style>
+            @page {
+                margin: 20px;
+            }
+
+            * {
+                box-sizing: border-box;
+            }
+
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: "DejaVu Sans", sans-serif;
+                color: #172a3d;
+                font-size: 12px;
+                background: #ffffff;
+            }
+
+            .document {
+                width: 100%;
+                border: 1px solid #e3e8ed;
+                border-radius: 12px;
+            }
+
+            .header {
+                padding: 24px 28px;
+                border-bottom: 1px solid #e8edf1;
+            }
+
+            .logo {
+                font-size: 23px;
+                font-weight: bold;
+                color: #102544;
+            }
+
+            .logo span {
+                color: #ff6e14;
+            }
+
+            .subtitle {
+                margin-top: 4px;
+                font-size: 9px;
+                color: #8996a5;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+            }
+
+            .status {
+                padding: 30px;
+                text-align: center;
+            }
+
+            .check {
+                width: 52px;
+                height: 52px;
+
+                margin: 0 auto 14px auto;
+
+                border: 2px solid #22a653;
+                border-radius: 50%;
+
+                color: #22a653;
+
+                font-size: 28px;
+                line-height: 48px;
+                font-weight: bold;
+            }
+
+            .status-title {
+                margin: 0;
+
+                font-size: 24px;
+                font-weight: bold;
+
+                color: #102544;
+
+                text-transform: uppercase;
+            }
+
+            .success-text {
+                margin-top: 7px;
+                color: #68788b;
+            }
+
+            .amount {
+                margin-top: 20px;
+
+                font-size: 32px;
+                font-weight: bold;
+
+                color: #ff6e14;
+            }
+
+            .amount-label {
+                margin-top: 4px;
+
+                font-size: 9px;
+                color: #7d8997;
+
+                text-transform: uppercase;
+            }
+
+            .section {
+                padding: 0 28px 25px 28px;
+            }
+
+            .section-title {
+                padding-bottom: 10px;
+
+                border-bottom: 1px solid #dce2e8;
+
+                font-size: 13px;
+                font-weight: bold;
+
+                text-transform: uppercase;
+
+                color: #172a3d;
+            }
+
+            .section-title span {
+                color: #ff6e14;
+            }
+
+            .product {
+                width: 100%;
+                margin-top: 18px;
+
+                border-collapse: collapse;
+            }
+
+            .product-image {
+                width: 42%;
+                padding-right: 22px;
+
+                vertical-align: top;
+            }
+
+            .product-info {
+                width: 58%;
+                padding-left: 22px;
+
+                border-left: 1px solid #e5e9ed;
+
+                vertical-align: top;
+            }
+
+            .product-image img {
+                width: 100%;
+                max-height: 230px;
+
+                object-fit: cover;
+
+                border: 1px solid #e3e8ed;
+                border-radius: 7px;
+            }
+
+            .label-title {
+                color: #8290a0;
+                font-size: 10px;
+            }
+
+            .product-name {
+                margin-top: 6px;
+
+                font-size: 14px;
+                font-weight: bold;
+
+                line-height: 20px;
+            }
+
+            .description {
+                margin-top: 5px;
+
+                color: #4f6073;
+                line-height: 18px;
+            }
+
+            .specs {
+                width: 100%;
+
+                margin-top: 14px;
+
+                border-collapse: collapse;
+            }
+
+            .specs td {
+                padding: 7px 0;
+
+                border-bottom: 1px solid #e8ecf0;
+            }
+
+            .spec-label {
+                font-weight: bold;
+            }
+
+            .spec-value {
+                text-align: right;
+            }
+
+            .payment {
+                width: 100%;
+
+                margin-top: 10px;
+
+                border-collapse: collapse;
+            }
+
+            .payment td {
+                padding: 11px 0;
+
+                border-bottom: 1px solid #e8ecf0;
+            }
+
+            .payment-label {
+                color: #526376;
+            }
+
+            .payment-value {
+                text-align: right;
+                font-weight: bold;
+            }
+
+            .status-paid {
+                color: #209447;
+                font-weight: bold;
+            }
+
+            .footer-note {
+                margin: 0 28px 25px 28px;
+
+                padding-top: 16px;
+
+                border-top: 1px solid #ffb087;
+
+                color: #607086;
+                font-size: 10px;
+                line-height: 16px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="document">
+
+            <!-- HEADER -->
+            <div class="header">
+                <div class="logo">
+                    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAuIAAADwCAMAAAByvPG0AAAAk1BMVEX/////bhT/aQD/ZAD/bA3/ejT//Pv+dRL//vv/sIz/18X/pHz/4tT/8+7/49P/j17/cin/8uj/kmn+rIX/vp7/3M7/axn/7eT/VwD/XwD/uJb/g0f/+PT/hEP/r5D/i1D/zbb/cx7/l2P/wqj/nG7/eCj/yK7/gDr/k1z/oHX/tZn/ikn/iFT+cQD/uqH/1L3/ez9YoPE6AAAeIElEQVR4nO2dC3OqPBPHJYkWFVo9aikWK4LXtufxfP9P94DXALtJAC+1s7+Z9zJzSlySP7ludhsNgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiAIgiB+Fa3WvS0giGsROMuP6Osr+gwd+962EMTFsZfzBeecseQ/zW7n3uZoCfruvQccm3qCR8KZMiasA4JZUXBvixT0O92VYGyxjr17qcwdjaNJcxINRz+5oogTrZgxKwNf/NyOPPxKRhohEpH7i3b/HhbYYeT7LIH7POpQZ/4AjLmwcrBeeG+rYIK2OH+Ogk+9O9gwfz2bwKzxHSwgyrEsKjxtunuIR0sw9bNmipsPN/1V1gT/696rAkJDxwIUnohn5t7bMoC2nzdzdeO5SjDPTeos3qa5yo8mWOeb7Ciez3ubVmQrCp8j39zWhGGhuoQIb2sCUY6Qwwq3WNO5t215XOhzvO1UxfaLYx6b/MQBjziyQjrxpH/8cQupTrETTwR20258mJ8ppfjhLU0gyuG9YQpPuvEfto6yB9CII95vuDC2p1CPwNe3s4AoS4zNU9LO6YdtqgQTSF/CuuFM5bkHrs05LTh/Ll10npJIfHtv67J48N4Pj29nwhK0wHp7vp0JRDmCSCXx4b3Ny/IM28pvuPVT3E/Z19TydiYQ5QjWcLd0c+2Y0IEnVbx7u2lCG/nKflhnQJxBd8UfSuI3WxbbmMR/3OYTccQunNVJ+Dec5JpAEicqAO7DHSX+w9wNSeJEBZbQUcZR4j/MGZokTlQgwCXO1j/s6IckTlRhjc5U2E/bCSOJE1UYoW5Y07tcqVFAEieq0MIWnOyHnW2SxImKeO9gs/HuvQ0rQBInqjHiQLvxrx+2ndIgiROV6SzyDSf4yw/08ieJE1VxouwNZcbbP1DhJHGiOm4s/GOsIMH9SXhvg0BI4kQNguW695qGv3ltRj9uK+UASZyohd3vxMNhPPppu+FnSOLEL4ckTvxySOLEL4ckTvxySOLEL4ckTvxySOLEL4ckTvxySOLEL4ckTvxySOLEL+eiEreDwE0JghJPl5N4a/8TweU875MSD0VWDABmJ49rn7UvZvfZ3kvUgX0urWr8s5bJ+wcm7763pZR6DLiUxG1vFMbt+fprMpl8refd/5Zbx8wzx1zigRPGH/Np8hPT9eZz2fHqVoXnbJf/Debr6c7oqPu5DJ2ySRnd8CP6mkwHSzw5QuB0lh+7qvna213V3iCt5I/NOq2Cr2m0+YjDkVdZ6NnS1vOPODGttMO3s+yuJ5P1IFS8VdD5L62jTYzXke11lp+btCW+pokl9dv2zEUkbjvj+XuP7fLo7kn+n9WczscGWaMNJW6PBuuVOP1C8luzSTSunnQjeB5vpk1LsjktUzTf5+1OiXaOv9muAM5WbVhso3b07/wzyf/O3jdxhasD/e0gylcyZ4v3aBBWKM0Nu9H7Il/a7H29WZb5Ar3B6vj+/5D3bzS2L7P93/DmHC7cS/QzY+c64tYkGl4qTHl9idvu8IulWTtzRaRZPJmYtHXfo5HEg+FESJl6Tz8gvrZVerHAGTRT64rxVXdWL7ods1KD9fkCo+DT4gcXhNNC3SQ/wRfjcg0YbOcz0OCdvbNoW0blrSB+UZRmTcd9w9bvzKTsyXwygv7GbvPTHwluFb3KW53oNW9MasgsuozI60q85QyYr4jhyHw+V/cyBhL34gX2G8xfLct2Yl785UN3a88VzP3m0GAActeZoFBskdO4GzcRu4XfGxqbnQySCx/KcinZu2g7hi0WdLqWzxSlJXXKIpORwV7mL7YBGg+6GYUxkYskFITrN/jdBGftS4i8psSfuzNV3e/fKqkwhVz0Eg+/VL/B+EupOJFee5VPbA2W2uzqYvjb3VzlsVWm89++KD4kwSPDWdZzd6Gt46S4xcAo58A2YgalMbaOtZ94Z5YrCMrWNsz9Wq4feI4UjSH46gIhQGtJPBjPlN3B6bXEFBzDdugk7nZ1imRibrxGDMY9I5PTZp511V1ZWLCLt6Vf2mjsZrPQwGB3YFbHib2v+tvBzlQYvj5jTY283GIOHRblLfAK2fjY6vyv9nCmqSMxrL3urCPxzgrIJoiYil/O1kh8tFLE+T397cosa0qr86Tvwk4kI+VSMSe3m8V0ob1TFzWaaO0Wb6HOYDvUj5KSvQt1gd5AOT8rFKceZwopiS0gtUd+oLPkXEDeWisgUf+EprrEW0vNF5iFfSP1pZb41uxHWNMkWGR/IMqYnPaMG3w2OAKa+DS7Whb1DxRvaax2BwZzKgnGxoqOfAsHsMLhiyU+PAb5acrOgFxmd68JpFT9c/hH592g9xLyyFiJyhJvDQxHvNOb9eAr2kqJG39GzCAgqrcqaXJa7gIdroEOKhmp993+0kyazMIncJUMFmyOnUbYQ6ukwnefODqMwfmT/WxHVpzLJYU2991Gx6QXSG2oGeq2qsSDuSKIOmIrB1cwKonHZUZpXW6gsGQXvodxbDb4D7BNPO2aLzaVJpupet3ymkyqrYlsPc+NZ5WZ4lbYMLaBYxpm+lykbcP03zqmA5R4rbfmrChxt7zCUxVCZ/IKiW9LTJy1o/4QTr+oL5e1wdG6D0nc4mkvNoQyUsNwPE91WGoieC4RTAvcnxpMCsDiVvBAE7yA1rFMRuAA/A5Y2hmNzL9fNqnlqlBN4oXtMjMEAzIdoRIfOotSohRCteZclvlcclaD0VY9MCPuWyKI51L9JdZFbSt+konKiiODCwvSqDhgJzB9/Xd4M/td7g/cP6DEk57OA1MaI9TL5FlN4lGFPnxXAcBsApM4i8qujsQr7hUzrmjxDh+qDTjps99pjF7LaJMhkS63leYVO3ih1/NMtqVQC8Ekv8/AQtJKJ9ry68BfFms3XJOVplRqnSOgShIfVtYLkHkck7hlPtofwRdHy/KFZQoGuhFM4sqclFDZIWSwY7YWg/FzE8IAT1tiZOEEUJiDSVzuZlCJl5wFsDq7KlUkXjjVKmNsL9/TohKvUjqS8vG5VMdaRIiwWCYs8dG4pJzYF2Bw8FWnUkTOE0SVQtDIRGCkqSPx8bZsHYHrC0MqSNxb1al+vs71tJeUuGDgqF/P4n3BhTqGJc67pX/qDZjrbuqJkk1lc5EM7CUAcj/UkLi1hp9VGVBj47CCxOtWf27Qv6TE4Q2KVk2LU9g0//HAErfK/xRwtrGts3LYlSlNVUblVu0gfpg3sY7EKxxPRNXPOMtL/Llm9YtFtkO8qMQtAWxxhfWbOKnk//L1AEu8PNlNiJRS2w0gXJy/yFpznqONhd32OhKv8PtW9ZlKaYkHU4Vn2M4JefffCnN5Zuv0whJn88KK0622v5xDzHLzictJfJb/LNs1Rx3BJLe36nsDMqyb+w5vK3FgGDGmtMRj1GjGFn/a8TJcxu1ooRK5n1kMGUqc7S+FaN12ils22tU7219c0RTNc8vCi0m8MHVz9Ns/SUeC/w2bDc/fObx9LxeV3rLhurfPr2BvLfHskVIpykrcxTpx4a9i5zg6us5woUgh/S33tCYSZz5vRptudz59Qvznccs95RGK4D6fzLvd7uadKa8dpJslmXIvKPFcDzlXf5PMf2NPi8VfH77XIfxI+so1tct8/2m96Q6684WvutmSLkay1XpjiYuZVsoYZSUOO9+k7kpxdobgdfGOIbMFp5W4YGIae0GrZdutwHUGK6USxd/shMJWbXEINotCN0hKTovuzJW+5GydUaKRxMX+NqK6W2Z/MktZT6Vwwaz10NnFOXA7g6/iyo39XcpN56g2eBlfjR13V7GtwBt+Kb1GsmPvBSV+qCPNOFL99KekxG1kIQSlhV6iRmf2WXUSZ2Ke7T7tsXI1ltugGCmUyGbdbMX128oTl1D+W73EBWf/ki4yGXy+lV7fIntErtr/STSZsdjpZg1mbJ79whWztGTGnvOV7UQKnbH3zN9eSuKMNafzZBjZfDeVzuyssi9WSYlDPtLp74P3Y2J0isBKDKXNos+yN1AoRiwyf6s4ieHTYrWNIvzvs4enWokncgv3UzfbGw1UXkdM/oY90L1r/2qsW9hDdzZSXfBmmB1LA8VQyseFbimIFUtzkamty0hc8HXs9HcN7I6GC8XHXd2ltqTE4Wkij0BfPFy8PDL5q92bLUDfqqHCgyMjmAA/ZeBT6Lg/2KCLCJEZLHUS582RVL49UowPviwefD0vQL9e+/NYF4IXYjjE+MvAJ8EKJ242kFv5IhLnVmZ66ykcDVjl4GjlJN4HmzW/EjkDOpqlvJ3fTClx1kS8Tpb4IpINpL8L39A/w9xYB6g9Gd8PtcSFNcgVa+P70/KOGOKkmhbJkbR/2918W7D3wpkAvsMrZsjA7/XQRzLzqUtInM1zg7+NuxrA7p4mlJN4CL6VhV3xs2G3eSvjHqmSuGhit2Ja+ASEvUifRYQVDq0e9gRz9BnpZq1G4kCng4jCyjqLOvjsDu3H0rs1TLSLLzSaYfb5iDdPogjcgFD/NmUk7ncL/VeAepeyOWawjnISB9XIP5CyvQh9O6njV0kcc6tKH8M7KKm3cfH2wq/eQhcO97xJEwGlxH3oGsV/2FcpH7fH2B8Bh1onBr6/guK+fKJdjEIwuJkbSRT1Jc4j4IUcbJV1I4n3v6GreCtYLK2OKorI66l7Vkhc+VoeupKSotEsseZSetmjLiLybo1K4hw03IWqb/fn0qQGm84Uj9BlpmNoNeRiY5hYKO7TBehTlvRUbYkXvX5SUH8i9qeql0opiYPXcJBJkvuh2IASfHBqMIXEuXIvFH2OtU/GY5vi6Bx/D6YzJi2TFRLH5IhNrmSJm3xdReC3QadGkP/7mQ7a90vTxvq9OLyy6CB/fSOJQ/epLXgR1F+rtlit4bnTMdt3AUDunchDuotdT9DcZe4gQhPSZV2FxAsuW8dH9BJ/RpbHglXIwI1pVfxTn6Ngc0D5M6srcaxxkQtzt5I41AuJGTBEtkLFNrBg33IN4xJnyggMeBctTtfaHWSPWcD3EU+gbgpS14NLnL1j0wBkZSBJHNvlU1xjxvnECtNcosEmarKjSF2JFx3w92BbFDeSODRPgvxjXFWMFWZl9ldxicOTNYkt9hOnCQ72F0wXQ2OM2XTu/XGJ4/N85MuRJI6dRlY63MPGMF8TOwyMAmRlp/A1JQ6vVlKwq7w3kXgLOjjn+f3fZKx5URw+8kWYLRqVOLpTc6SPzVROEVKx1WY+PGqxWpBGlmzCJf6GhpBCBHyuQxtRJXh9UkcLqR/BdA9im73S2VdNiTNkjx+9o3QbiYOnwbywr6eKYCVYYacI78VDnfFYBR5n2q0P+O1ETycYF5sRnnfuUInjJ2HYevMs8UD/u+Z4f5HvVDvpWWJNchZmPYln56oZkAssN5I4NEXL+6q7Kv8RtihudGMS182XG4odisM+M3aII/5p6wXZOGPfpxZEJa64ZzjUSRzbkuefWouLoKtbrbvHCFk0SPO0mhIfoCNd564Sh1b7uQ0VR+HGZPF3QLWoxHVTcXzj43ibFls1MvVWTQry9UhXwTGJ44e9BhLH/CIVZ2Dlq0e3jE/vcyNmnGelNSWOv8/oFX7iJhJ39RIPFZMUxgfQaIuHCtKOzZhn9VHCLnLz3iDYaQjLQ9rxxiTOJvinqZU46CGRgk5dFSyRd5hp5/WYNKUzkFoSl4JUF/iBEpdGPXfwplhnvsObAqjE9X43/SdEZYfZsIsM+4Uo2EC9YPI4tQ0mcVXwAq3EkUmwwaQNABuJVtrhEVtvSsfN9ST+jndfd5U4PFE5H3M8K0JDCo4lJ0JjGuq72gAJn3CMvuMh/4657EkgcQakq6FoL66YNmsljnjS6s5qYBC3Pe1mLH5VStJZLYkz2Pt6xw+U+KmzDV9Vk5QY+25rZE8OkIkIm+z/3cO2/vSbzB42j9VLXDFEVJY4epikAtmiZPlgTUVsxKFYcuKsJXFgp/nEfSUONftJThv8lgKYr+9IDYmDG/XW2ekVu7hoIPF+VYmjjtgpt5U4cs3ZQOLo+culJK5o2/tKHLT3dffWz4pQo0yZXO4aEj98djUk7laWuGra/DASv3IvrloM3VXiLXB1t9PLcoFPUjjbqqy7xkTlOBe/+ERF3EviFZyw0IkKeKEvCybx6EISVyyG7itxcJuZjdOcEYortX/UzYNKXDFfO+Biy82D3wy23DQIrVR5ualcGVbeUam03ESCaql2NQ+gvlDn7I+1JA5GLD9wV4nD3YJYb6eKsEBiqMmJiW4a6n3r0BPqw96Wi9y1xW91nesFkfhCt2koVN4k+n1x5Dippz2tgX4N29vXbxoix8JSm9STuKKO7itxeKN1pjju8f9p5wR1jn50p5vY0Y9+gEAcuPRHP8o5hVbiqPNklaMf7PhKHwLz2kc/P1fi4JUIC78LL3hbP+1DD/D1YdORNjz5A2IJGxSOUkewPeXv60ocO8AvOrsZgB7ga78X7LqQlK3hl0pcGT0MKMQo3ysq8YV2cMacq48nrgFyEVA0dQnFUafWcxyvq0gcixOkdSyGcKpdeWqgrlAXc8P6uRIvF/faV+eXPoI702p7Luxuzin0zifyDbzq8oljUpPuUlxF4qgz7Z8Ku4ZY+AH9IIbllZC2on6pxFFXecgkUTyAb0HthF+J0F3NecbSH5xu/aB+z/o0tEjJ59P5q0jcRpx4pWWuOS0s/4uvexBzLbHO7/ZLJV4iawwD4gUmc/llcW6O9+Jo4t4DWGi08/0r7PKObinbwiJiSSPLVSSOusAbeI4VwQI26Hx0UA/O1XmC9/gSn4MFduCfL76o3wUa2l1zUYzvqbiBr27WAAsndxawN0E24fIpH3JgG+qyE+h1JI6toA1WyEWwsEO6/VgssYTsZ//wEkdOwGw8amrm6V4xmmxjdxQh2Cw/DVbcwF8BhUimY4vfcxwVNOqNZtsQuwcvpFOT60i8j8Vg5LrlA1RDyC1xzTZ7gB1VZwLTPbrExQIeyU1Sggq+Bt9gn6KbsXG2aEWoIOXo3ELDmEoR+tG0tcooRAG2DyrferyOxBtY7AL2ojC4MYKTMWIRAtlGpRfEyqQ9pEp7HImPsEqAjRjpJc5ex2B9jw6drmDZnRZVwDeV9xGWryIzm0C+YFWQg4YinZT8zV1J4mgA/VfFBNqzXqAjNjRsqhCKEznsVlsyqkqd0+NI3MHOwOEOFF2knx9swrUnZbxmTbm1lGE72+h7wXGgdw9JqYSwSxNKt248O7QvtfGVJI4cr6W+Zagu7DVnM+iUDd0ekBeOOVroSM0HlwrbeVOJ9zFPJmR5gw5ih8cEEg1hJOeRYVxadSqDL6N742got9x1ITRgtUA+xaTx0N3/TDrFK0kcD4sLRnJNCVJRCn/VKabTwAtDpyqKqNZyjT2OxAOsPTm0InFj5Gji+IKLJWhIK39t2V+bRKa10LDx2LnlrjJkyx3UQ4yt4DWX4nwr46F4JYm38PRbPni9e6/w9IX8ols+nvyNwYXhsXxzWccfSOJYbwhtHS+/lTm9koeQ5m0XUpax2bF/VidCETNoQmErQlkIK/N+aEx2i/WgTQoPT52bzft8JYmrcj2DAYPc87KbrfIdwhZNkiEEuBoZ48nlWOYs73EkrgiYHmXXem4o3nQT8eyHfqDV+Qt0peLt8LeadFbCX3u5ATgIX1XBWrJXKbADzl3R3by57liRfTKbpuFaEg+wKOTpH7L8FVhvzKQyxds6t+GvWDtx0cmpxnZWCsf/XubFHkjiW3xOK+98eMOpNnNxasiksCM+2gjs+lm4q1dd3k2++HyWCnU7c5UleVdRLJjvvuhJLP+1t1yrUsFlg39cS+KNsSKjt2Dr+JwOIhgN80lIeTPONACadMJK9283nUzGrbbi7lY+TNwDSRyLT5yW2psv3cC2Ay+O/mmmKKdnrEhe9QShIl0rX6dW67MnC9Z8aXe8NJuqF26+Z8oVb2EdhQWZ3ZvL/kXDZ88NXO85nr8jH+Oh5Gxgl6tJPFAmomVs9bIZh+E2Hsy/F8VWYeyP/CUqPecEm31vQq/vBn1vO3hRZnXPnyQ8kMTx5E1pFXD21GzO9CnSZVt4c7N1vITReG0pnhRiN3M0SRCe5mln1uwp/R91JmLp5tkBG09LeCr66VC00gg/O3G7msRVqUL3Fu+y1qNVwYR8uLbUvH363rPZX+3r58+DH0jiijyPx0oo5SSePsJ9zpJKe+PKVN6HxZOJxA/lmsyUiisy9IxILllfdL6NryfxfimfZcAEf30eSfEkh9ID+rdn+YxOjyRx7Jp6PQxEI/abduYSNwG40RIoEpaWKDh/J/N6Etf1OgbGSgdBSMLrsiXm4yE8ksSN/E6uwDFP60UlDp7LO9ps9XpE4fbkFSWOeo8Zw6Wz9ku0L5vmdxEeSuKecjpxLfj6UGmXlDhy87Z2rwhFWLyixBsefh/WDCF9kHjiIvPiivX6UBK/SzfOThF1Lilx5FaiPa87WPOvwhT/mhJX5K43IrsiwX1uDBGAx9JjSRzPXH01pHEfkfiiQkeGXuYJJvW+YrYotslVJY5eOzIin/cTCTRuDOQN91gSv8RAXg7Bw9OPwxJnkcFGSP4ZPMGwp/WQVBYMBQO4qsQbrmIvV4coBLRr15qL+tAtxweTuP1y26mKENL6HJH4NCg7fxKq/FeO6uBOWzDklHhdiTf6ijioGgq7H41Wnckgf4HGxgeTeKNveHaZeZnS++WnJ7mcsR2TuOsqIvLDpape0VE4n6hh8KdzZYk3vGZFjfNuUZKtAe58oivuBdTjo0m8QifHZl3ciU/9pBXKP41KHL+XBRerCRxRrjSpXMTp9toSb3gGhzbA7yPXUtvVNmkE78KXJx5O4o3Q5OhQehN/sm14lc5UeDO7w4xLvOEo0ozn8ce6KvCiKqsu/wu5rH91iTfcTXmDUUkq06EqisOyBz6exBudMgM55+3UYSNolx79U9/Y7A8rJN4YmWpc+GNdDLfE3EEFc+eYYq8v8cRgXtJgxoeoEpxF6S+GixCr1geUeMNZmfbJzDr5WXfyzpxqBF8UphMqiacDhUn5+ZEBozMtaW4zRMu6gcQTgydlDBZ8pQpFYQ9KjIpW6s+lyCfxiBJveF2j6mRsLunJ+7DMZyucdYujvlLijf5Gv6oV/Ns0HJo7ULviZm2wAHNP3ETiDW9gPr9gs4E6fpjdeTH/YgSfoCnIGg8q8UZraOlqQHD/q5N9cWftG+2tCOZP89dMUtQSbwTxTGMUY+0SaUKcyDdqZszcE7eReCLLqVn9Mj5xtCpwhwuzrRXBlQmaHlXiSZ856Cm2DwVjvTnQr43WM92mY/poBA+iGomnq65XhdM5e4UDE+E8z1Uvefh51gMjk8jF3EbiCdsXbf0yNnsxm6sFcdPSfTJJa/1ra0LhPqrEk4ZrTxAHccbFyydiWqc9Ud19SB8dYmO+3eaiCJfzn44GSBsnBXf1qakKOONvoVjIMc7eB9r4as89BtgtmFLiPvSI8HVZK0bdCcPHnuRdVgPzagjC7kzlyc/4bB5rYz07Tfj1cxKH2lYItcTBR/jFJN6wvWXE3zI3ShLD+Zs/HcNRxQ5PhZu/b37+Hkr6pP/Go/8Uj7baf5+K/F3LT7Sc8SpXelK0/9b8HFV78f6oPfH9wr2Zvb3NQSd/IxrgeQGYnRiOR/RJQ/eAzzBtomjb23aT+s0bvLfX2oQG9kq0nOWGFUvb3QFKWit29Lk9Gs8r8FWeMtnH3TXUtk9PqnB7Iwuu1+hiEk9pddrRqveavHGCeO2tovZW/9at0Xje7L2mz3B+eLI53Qx1FdaCyf+ZN46aPetYuOg1o3GVNGbnn3XDwbq5f0vO+N7exbq7dA3rErFb+XSVZ07PesPN16FV+L4SXhdfSf1WavuWk5TWPJZ2bOj52LjPMHqVW9dRKQJvFC7jOF6GI8/goz491VkOP3aMh2HHC0r1LtrSnW083pUdb016Gi12Ym84HB/sXV7a3svTctMqOBicVIJby147Le34+nH43L9EnRIEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRAEQRDEo/E/hx873KW1jOIAAAAASUVORK5CYII=" />
+                </div>
+                <div class="subtitle">Paiement sécurisé</div>
+            </div>
+
+            <!-- PAYMENT SUCCESS -->
+
+            <div class="status">
+                <div class="check">✓</div>
+
+                <h1 class="status-title">Paiement effectué</h1>
+
+                <div class="success-text">Votre paiement a été enregistré avec succès.</div>
+
+                <div class="amount">{{ amount|number_format( 2, ',', ' ' ) }} €</div>
+
+                <div class="amount-label">Montant payé</div>
+            </div>
+
+            <!-- VEHICULE -->
+
+            <div class="section">
+                <div class="section-title">
+                    <span>●</span>
+
+                    Détails du produit
+                </div>
+
+                <table class="product">
+                    <tr>
+                        <!-- IMAGE -->
+
+                        <td class="product-image">
+                            {% if vehicule.fromtImage %}
+
+                            <img
+                                src="{{ absolute_url(
+                                asset(
+                                    vehicule.fromtImage
+                                )
+                            ) }}"
+                                alt=""
+                            />
+
+                            {% endif %}
+                        </td>
+
+                        <!-- INFOS -->
+                        <td class="product-info">
+                            <div class="label-title">Libellé</div>
+                            <div class="product-name">{{ vehicule.label }}</div>
+                            {% if vehicule.description %}
+                            <div class="description">{{ vehicule.description }}</div>
+                            {% endif %}
+                            <table class="specs">
+                                <tr>
+                                    <td class="spec-label">Marque</td>
+
+                                    <td class="spec-value">{{ vehicule.brand }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Modèle</td>
+
+                                    <td class="spec-value">{{ vehicule.model }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Année modèle</td>
+
+                                    <td class="spec-value">{{ vehicule.year}}</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Kilométrage</td>
+
+                                    <td class="spec-value">
+                                        {{ vehicule.kilometrage|number_format( 0, ',', ' ' ) }} km
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Boîte de vitesse</td>
+
+                                    <td class="spec-value">{{ vehicule.transmission }}</td>
+                                </tr>
+                                <tr>
+                                    <td class="spec-label">Énergie</td>
+
+                                    <td class="spec-value">{{ vehicule.energie }}</td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- PAYMENT DETAILS -->
+            <div class="section">
+                <div class="section-title">
+                    <span>●</span>
+
+                    Détails du paiement
+                </div>
+                <table class="payment">
+                    <tr>
+                        <td class="payment-label">Date du paiement</td>
+
+                        <td class="payment-value">{{ paidAt|date( 'd/m/Y à H:i' ) }}</td>
+                    </tr>
+                    <tr>
+                        <td class="payment-label">Moyen de paiement</td>
+
+                        <td class="payment-value">{{ paymentMethod }}</td>
+                    </tr>
+                    <tr>
+                        <td class="payment-label">Référence de transaction</td>
+
+                        <td class="payment-value">{{ transactionReference }}</td>
+                    </tr>
+                    <tr>
+                        <td class="payment-label">Statut</td>
+
+                        <td class="payment-value status-paid">✓ Effectué</td>
+                    </tr>
+                    <tr>
+                        <td class="payment-label">Montant</td>
+
+                        <td class="payment-value">{{ amount|number_format( 2, ',', ' ' ) }} €</td>
+                    </tr>
+                </table>
+            </div>
+            <div class="footer-note">
+                Ce bordereau récapitule les informations de la transaction enregistrée.
+                <br />
+                Conservez-le avec vos justificatifs de transaction.
+            </div>
+        </div>
+    </body>
+</html>

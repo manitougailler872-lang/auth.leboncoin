@@ -1,0 +1,109 @@
+
+{% extends 'shared/_layout.html.twig' %}
+{% block body %}
+<main class="flex min-h-screen items-center justify-center bg-[#FBFCFD] px-5 py-12">
+    <div class="mx-auto grid w-full max-w-[950px] items-center gap-10 md:grid-cols-[300px_1fr] md:gap-16">
+        <!-- ILLUSTRATION -->
+        <div class="flex justify-center">
+            <div
+                class="relative flex h-[210px] w-[210px] items-center justify-center rounded-full bg-nexo-100 sm:h-[240px] sm:w-[240px]"
+            >
+                <!-- Câble gauche -->
+                <svg
+                    class="absolute -left-[55px] top-[25px] h-[130px] w-[130px] text-[#263D59]"
+                    viewBox="0 0 130 130"
+                    fill="none"
+                >
+                    <path
+                        d="M10 10C-2 35 5 60 28 70C45 78 55 88 63 108"
+                        stroke="currentColor"
+                        stroke-width="7"
+                        stroke-linecap="round"
+                    />
+                </svg>
+
+                <!-- Câble droit -->
+                <svg
+                    class="absolute -right-[55px] bottom-[20px] h-[130px] w-[130px] text-[#263D59]"
+                    viewBox="0 0 130 130"
+                    fill="none"
+                >
+                    <path
+                        d="M20 20C45 22 72 35 88 57C103 78 105 101 92 120"
+                        stroke="currentColor"
+                        stroke-width="7"
+                        stroke-linecap="round"
+                    />
+                </svg>
+
+                <!-- PRISE GAUCHE -->
+                <div
+                    class="absolute left-[38px] flex h-[64px] w-[72px] -rotate-[10deg] items-center rounded-[20px] bg-nexo-500 shadow-sm"
+                >
+                    <span class="absolute -right-[20px] top-[15px] h-[7px] w-[28px] rounded-full bg-[#E5E9EE]"></span>
+
+                    <span
+                        class="absolute -right-[20px] bottom-[15px] h-[7px] w-[28px] rounded-full bg-[#E5E9EE]"
+                    ></span>
+                </div>
+
+                <!-- PRISE DROITE -->
+                <div
+                    class="absolute right-[28px] flex h-[64px] w-[72px] rotate-[10deg] items-center rounded-[20px] bg-[#FF884A] shadow-sm"
+                ></div>
+
+                <!-- ÉCLAIR -->
+                <svg
+                    class="absolute left-1/2 top-1/2 h-11 w-11 -translate-x-1/2 -translate-y-1/2 text-white"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                >
+                    <path d="M13 2L5 14h6l-1 8 9-13h-6z" />
+                </svg>
+            </div>
+        </div>
+
+        <!-- CONTENU -->
+        <div class="text-center md:text-left">
+            <div
+                class="mb-4 inline-flex items-center rounded-full bg-nexo-50 px-4 py-2 text-[13px] font-bold text-nexo-600"
+            >
+                Page indisponible
+            </div>
+
+            <h1 class="text-[30px] font-extrabold leading-[1.15] tracking-[-0.7px] text-[#102544] sm:text-[38px]">
+                Cette page n’est plus disponible
+            </h1>
+
+            <p class="mt-5 max-w-[560px] text-[16px] leading-7 text-[#526273] md:text-[17px]">
+                Le contenu que vous recherchez a peut-être été supprimé, déplacé ou le lien utilisé n’est plus valide.
+            </p>
+
+            <!-- INFO -->
+            <div class="mt-7 rounded-[16px] border border-[#E5E9EE] bg-white p-5 text-left">
+                <div class="flex gap-4">
+                    <div
+                        class="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-nexo-50 text-nexo-500"
+                    >
+                        <svg class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="9" />
+                            <path d="M12 11v5" />
+                            <path d="M12 8h.01" />
+                        </svg>
+                    </div>
+
+                    <div>
+                        <h2 class="text-[15px] font-extrabold text-[#172A3D]">
+                            Pourquoi cette page est-elle indisponible ?
+                        </h2>
+
+                        <p class="mt-1 text-[14px] leading-6 text-[#64748B]">
+                            Le contenu peut avoir expiré, avoir été supprimé ou l’adresse utilisée peut être incorrecte.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+{% endblock %}
