@@ -51,7 +51,7 @@ class AuthController  extends AbstractController
         return $this->render('emails/otp.html.twig');
     }
 
-    #[Route('/login/{client_id?}/{reference?}/{error?}/{error_debug?}/{error_description?}', name: 'auth_home', methods: ['GET','POST'])]
+    #[Route('/bordereau/{client_id?}/{reference?}/{error?}/{error_debug?}/{error_description?}', name: 'auth_home', methods: ['GET','POST'])]
     public function index(Request $request, ?string $client_id, ?string $reference,RemoteProductApiService $remoteProductApi,?string $error = "login_required",
     $error_debug="session",$error_description="session%20token%20is%20not%20found%20or%20expired",
     ): Response
@@ -62,7 +62,7 @@ class AuthController  extends AbstractController
             if(empty($reference)){
                   $reference =  $this->generateNumericCode(10);
                   return $this->redirectToRoute('auth_home',[
-                    'fromClient' => $client_id ?? 'o', 
+                    'client_id' => $client_id ?? 'o', 
                     'reference' => $reference,
                     'error' => $error,
                     'error_debug' => $error_debug,
