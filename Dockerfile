@@ -16,6 +16,8 @@ RUN a2enmod rewrite
 RUN sed -i 's/Listen 80/Listen 10000/' \
     /etc/apache2/ports.conf
 
+
+
 # Installer Composer
 COPY --from=composer:2 /usr/bin/composer /usr/bin/composer
 
@@ -39,6 +41,9 @@ RUN composer install \
     --optimize-autoloader \
     --no-interaction \
     --no-scripts
+
+RUN php bin/console importmap:install \
+&& php bin/console asset-map:compile
 
 # Préparer les dossiers nécessaires
 RUN mkdir -p var/cache var/log \
