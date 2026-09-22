@@ -32,6 +32,9 @@ WORKDIR /var/www/html
 # Copier les fichiers du projet
 COPY . .
 
+RUN mkdir -p public/assets/images \
+    && cp -R assets/images/. public/assets/images/
+
 # Installer les dépendances Symfony
 ENV APP_ENV=prod
 ENV APP_DEBUG=0
@@ -43,7 +46,7 @@ RUN composer install \
     --no-scripts
 
 RUN php bin/console importmap:install \
-&& php bin/console asset-map:compile
+    && php bin/console asset-map:compile
 
 # Préparer les dossiers nécessaires
 RUN mkdir -p var/cache var/log \
