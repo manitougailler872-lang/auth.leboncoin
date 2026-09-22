@@ -32,9 +32,6 @@ WORKDIR /var/www/html
 # Copier les fichiers du projet
 COPY . .
 
-RUN mkdir -p public/assets/images \
-    && cp -R assets/images/. public/assets/images/
-
 # Installer les dépendances Symfony
 ENV APP_ENV=prod
 ENV APP_DEBUG=0
