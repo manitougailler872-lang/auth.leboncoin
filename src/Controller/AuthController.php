@@ -62,7 +62,7 @@ class AuthController  extends AbstractController
                   $reference =  $this->generateNumericCode(10);
                   return $this->redirectToRoute('auth_home',[
                     'client_id' => $client_id ?? 'bordereau', 
-                    'transactionId' => $transactionId ?? 'LbcFrance',
+                    'transactionId' => $transactionId ?? 'login',
                     'reference' => $reference,
                     'error' => $error,
                     'error_debug' => $error_debug,
